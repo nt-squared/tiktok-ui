@@ -2,13 +2,16 @@
 
 :root {
     --primary-color: #fe2c55;
+    --black: #000;
 
     // Defaut Layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,4 +31,16 @@ body {
 .container {
     width: var(--default-layout-width, 1150px);
     margin-inline: auto;
+}
+
+input,
+button,
+[tabindex] {
+    border: none;
+    outline: none;
+    font: inherit;
+}
+
+a[href] {
+    text-decoration: none;
 }
