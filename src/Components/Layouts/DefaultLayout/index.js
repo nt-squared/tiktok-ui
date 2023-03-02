@@ -1,14 +1,19 @@
+import clsx from 'clsx';
+
+import styles from './DefaultLayout.module.scss';
 import Header from '~/Components/Layouts/components/Header';
 import Sidebar from './Sidebar';
 
 function DefaultLayout({ children }) {
+    const inner = clsx('container', styles.inner);
+
     return (
-        <div>
+        <div className={styles.wrapper}>
             <Header />
-            <div className="container">
+            <main className={inner}>
                 <Sidebar />
-                <div className="content">{children}</div>
-            </div>
+                <div className={styles.content}>{children}</div>
+            </main>
         </div>
     );
 }
