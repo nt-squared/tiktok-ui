@@ -48,13 +48,13 @@
 .searchResults {
     width: 361px;
     margin-top: -2px;
+}
 
-    & .searchAccount {
-        font-size: 14px;
-        line-height: 20px;
-        padding: 5px 12px;
-        color: rgba(var(--primary-color) / 0.5);
-    }
+.searchAccount {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px 12px;
+    color: rgba(var(--primary-color) / 0.5);
 }
 
 .searchInput[type='search'] {
@@ -125,4 +125,17 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.more-button {
+    cursor: pointer;
+    background: #0000;
+    margin-inline-start: 16px;
+    padding: 4px;
+
+    & svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
 }

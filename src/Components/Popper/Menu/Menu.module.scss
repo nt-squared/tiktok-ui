@@ -1,0 +1,23 @@
+.menu-wrapper {
+    min-width: 223px;
+
+    & .menu-item {
+        padding: 10px 8px 10px 16px;
+        display: flex;
+        justify-content: space-between;
+
+        &:hover {
+            background: rgba(var(--primary-color) / 0.03);
+        }
+    }
+
+    & .menu-content {
+        width: 100%;
+        padding: 0;
+        min-height: auto;
+        background: #0000;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}

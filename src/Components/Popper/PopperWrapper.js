@@ -3,8 +3,8 @@ import styles from './Popper.module.scss';
 
 const cx = classNames.bind(styles);
 
-function PopperWrapper({ children }) {
-    return <ul className={cx('wrapper')}>{children}</ul>;
+function PopperWrapper({ children, className }) {
+    return <ul className={cx('wrapper', className)}>{children}</ul>;
 }
 
 export default PopperWrapper;

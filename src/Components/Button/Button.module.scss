@@ -7,7 +7,7 @@
     --text-color: rgba(var(--primary-color) / 1);
     --bg-color: var(--white);
     --border-radius: 4px;
-    --border-width: 1px;
+    --border-width: 0px;
     --border-color: rgba(var(--primary-color) / 1);
     --padding-block: calc(((var(--min-height) - var(--line-height) - var(--border-width) * 2) / 2));
     --padding-inline: 8px;
@@ -66,6 +66,7 @@
 .rounded {
     --text-color: rgba(var(--primary-color) / 0.75);
     --border-color: rgba(var(--primary-color) / 0.12);
+    --border-width: 1px;
 
     border-radius: var(--min-width);
     box-shadow: 0px 2px 8px rgb(0 0 0 / 0.06);
@@ -78,7 +79,6 @@
 .primary {
     --text-color: var(--white);
     --bg-color: var(--accent-color);
-    --border-width: 0px;
 
     &:hover {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
@@ -88,6 +88,7 @@
 .outline {
     --text-color: var(--accent-color);
     --border-color: var(--text-color);
+    --border-width: 1px;
 
     &:hover {
         background: rgba(var(--primary-color) / 0.06);
@@ -101,6 +102,7 @@
     --padding-block: 0;
     --padding-inline: 16px;
     --border-color: rgba(var(--primary-color) / 0.12);
+    --border-width: 1px;
 
     border-radius: calc(var(--border-radius) / 2);
 
