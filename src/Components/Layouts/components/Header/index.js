@@ -1,45 +1,81 @@
+// Libraries
 import clsx from 'clsx';
+import classNames from 'classnames/bind';
+import Tippy from '@tippyjs/react/headless';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+
+// Source code
 import styles from './Header.module.scss';
 import images from '~/assets/images';
+import { PopperWrapper } from '~/Components/Popper';
+import { AccountItem } from '~/Components/AccountItem';
+
+const inner = clsx('container', styles.inner);
+const cx = classNames.bind(styles);
 
 function Header() {
-    const inner = clsx('container', styles.inner);
+    const [searchResult, setSearchResult] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResult([]);
+        }, 2000);
+    }, []);
+
     return (
-        <header className={styles.wrapper}>
+        <header className={cx('wrapper')}>
             <div className={inner}>
                 {/* Logo */}
                 <div className={styles.logoContainer}>
-                    <Link to="/" className={styles.logo}>
+                    <Link to="/" className={cx('logo')}>
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
                 </div>
 
                 {/* Search Bar */}
-                <div className={styles.searchWrapper}>
-                    <div className={styles.searchContainer}>
-                        <input
-                            type="search"
-                            placeholder="Search accounts and videos"
-                            spellCheck={false}
-                            className={styles.searchInput}
-                        />
-                        <button className={styles.clearIcon}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        {/* <button>
-                            <FontAwesomeIcon icon={faSpinner} />
-                        </button> */}
-                        <span></span>
-                        <button type="submit" className={styles.searchIcon}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
+                <div className={cx('searchWrapper')}>
+                    <div className={cx('searchBar')}>
+                        <Tippy
+                            interactive
+                            visible={searchResult.length > 0}
+                            render={(attrs) => (
+                                <div className={cx('searchResults')} tabIndex="-1" {...attrs}>
+                                    <PopperWrapper>
+                                        <div className={cx('searchAccount')}>Account</div>
+                                        <AccountItem />
+                                        <AccountItem />
+                                        <AccountItem />
+                                        <AccountItem />
+                                    </PopperWrapper>
+                                </div>
+                            )}
+                        >
+                            <div className={cx('searchContainer')}>
+                                <input
+                                    type="search"
+                                    placeholder="Search accounts and videos"
+                                    spellCheck={false}
+                                    className={cx('searchInput')}
+                                />
+                                <button className={cx('clearIcon')}>
+                                    <FontAwesomeIcon icon={faCircleXmark} />
+                                </button>
+                                {/* <button>
+                                    <FontAwesomeIcon icon={faSpinner} />
+                                </button> */}
+                                <span></span>
+                                <button type="submit" className={cx('searchIcon')}>
+                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                </button>
+                            </div>
+                        </Tippy>
                     </div>
                 </div>
 
-                <div>{/* action field */}</div>
+                <div className="actions">{/* action field */}</div>
             </div>
         </header>
     );

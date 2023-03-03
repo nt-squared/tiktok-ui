@@ -1,8 +1,10 @@
 @import 'normalize.css';
 
 :root {
-    --primary-color: #fe2c55;
+    --primary-color: 22 24 35;
+    --accent-color: #fe2c55;
     --black: #000;
+    --white: #fff;
 
     // Defaut Layout
     --default-layout-header-height: 60px;
@@ -17,14 +19,13 @@
     box-sizing: border-box;
 }
 
-html {
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 1.5;
     min-height: 100vh;
+    color: rgba(var(--primary-color) / 1);
+    background-color: var(--white);
     text-rendering: optimizeSpeed;
 }
 
@@ -43,4 +44,9 @@ button,
 
 a[href] {
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }

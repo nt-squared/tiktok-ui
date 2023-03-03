@@ -1,0 +1,12 @@
+.wrapper {
+    // position: absolute;
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding-block-start: 0.5rem;
+    width: 100%;
+    max-height: min((100vh - 96px) - 60px, 734px);
+    background: var(--white);
+    border-radius: 0.5rem;
+    overflow: hidden auto;
+    box-shadow: 0 2px 12px rgba(0 0 0 / 0.12);
+}
