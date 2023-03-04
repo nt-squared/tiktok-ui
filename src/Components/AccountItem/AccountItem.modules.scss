@@ -3,6 +3,10 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+
+    &:hover {
+        background: rgba(var(--primary-color) / 0.03);
+    }
 }
 
 .avatar {

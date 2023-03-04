@@ -1,5 +1,6 @@
 // Libraries
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 // Source code
 import styles from './AccountItem.modules.scss';
@@ -9,25 +10,25 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     return (
-        <li className={cx('accountItem')}>
+        <Link to={`/@${data.nickname}`} className={cx('accountItem')}>
             <span className={cx('avatar')}>
                 <Image
                     loading="lazy"
-                    src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/a35b26c1df31c2d3b6947253403d2480~c5_300x300.webp?x-expires=1677981600&x-signature=gp4bm6Gw1GmqI7qw583dUXgeYOE%3D"
+                    src={data.avatar}
                     alt="avatar"
                     fallbackImage="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                 />
             </span>
             <div className={cx('userInfo')}>
                 <h4 className={cx('userName')}>
-                    hannah
-                    <FontAwesomeIcon icon={faCircleCheck} className={cx('checkIcon')} />
+                    {data.full_name}
+                    {data.tick && <FontAwesomeIcon icon={faCircleCheck} className={cx('checkIcon')} />}
                 </h4>
-                <p className={cx('nickName')}>hannah</p>
+                <p className={cx('nickName')}>{data.nickname}</p>
             </div>
-        </li>
+        </Link>
     );
 }
 

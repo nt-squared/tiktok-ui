@@ -9,11 +9,11 @@ import Search from '~/pages/Search';
 
 // Public Routes
 const publicRoutes = [
-    { path: '/', element: Home },
-    { path: '/following', element: Following },
-    { path: '/profile', element: Profile },
-    { path: '/upload', element: Upload, layout: HeaderLayout },
-    { path: '/search', element: Search, layout: null },
+    { path: '/', component: Home },
+    { path: '/following', component: Following },
+    { path: '/@/:nickname', component: Profile },
+    { path: '/upload', component: Upload, layout: HeaderLayout },
+    { path: '/search', component: Search, layout: null },
 ];
 
 const privateRoutes = [];

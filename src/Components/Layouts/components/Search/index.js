@@ -14,23 +14,37 @@ const cx = classNames.bind(styles);
 function Search() {
     // useState
     const [searchValue, setSearchValue] = useState('');
-    const [searchResult, setSearchResult] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
     const [showResults, setshowResults] = useState(true);
+    const [seachLoading, setSeachLoading] = useState(false);
 
     // useRef
     const inputRef = useRef();
 
     // useEffect
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2]);
-        }, 0);
-    }, []);
+        if (!searchValue.trim()) {
+            setSearchResults([]);
+            return;
+        }
+
+        setSeachLoading(true);
+
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            .then((res) => res.json())
+            .then((res) => {
+                setSearchResults(res.data);
+                setSeachLoading(false);
+            })
+            .finally(() => {
+                setSeachLoading(false);
+            });
+    }, [searchValue]);
 
     // handle clear search value
     const handleClearSearchValue = () => {
         setSearchValue('');
-        setSearchResult([]);
+        setSearchResults([]);
         inputRef.current.focus();
     };
 
@@ -44,15 +58,14 @@ function Search() {
             <div className={cx('searchBar')}>
                 <HeadlessTippy
                     interactive
-                    visible={showResults && searchResult.length > 0}
+                    visible={showResults && searchResults.length > 0}
                     render={(attrs) => (
                         <div className={cx('searchResults')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <div className={cx('searchAccount')}>Account</div>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
+                                {searchResults.map((searchResult) => (
+                                    <AccountItem key={searchResult.id} data={searchResult} />
+                                ))}
                             </PopperWrapper>
                         </div>
                     )}
@@ -69,14 +82,16 @@ function Search() {
                             onChange={(e) => setSearchValue(e.target.value)}
                             onFocus={() => setshowResults(true)}
                         />
-                        {!!searchValue && (
+                        {!!searchValue && !seachLoading && (
                             <button className={cx('clearIcon')} onClick={handleClearSearchValue}>
-                                <ClearIcon style={{ margin: '0px 12px' }} />
+                                <ClearIcon />
                             </button>
                         )}
-                        {/* <button>
-                    <SpinnerIcon style={{ margin: '0px 12px' }} />
-                </button> */}
+                        {seachLoading && (
+                            <button className={cx('spinnerIcon')}>
+                                <SpinnerIcon />
+                            </button>
+                        )}
                         <span></span>
                         <button type="submit" className={cx('searchIcon')}>
                             <SearchIcon />

@@ -30,6 +30,7 @@
 }
 
 .searchAccount {
+    font-weight: 700;
     font-size: 14px;
     line-height: 20px;
     padding: 5px 12px;
@@ -62,14 +63,29 @@
     }
 }
 
-.clearIcon {
+.clearIcon,
+.spinnerIcon {
     font-size: 0;
+    background: #0000;
 
     & svg {
         width: 16px;
         height: 16px;
         margin-inline: 12px;
         color: rgba(var(--primary-color) / 0.34);
+    }
+}
+
+.spinnerIcon {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn);
     }
 }
 
