@@ -6,7 +6,7 @@ export const SearchIcon = ({ width = '24px', height = '24px', className }) => {
             width={width}
             height={height}
             viewBox="0 0 48 48"
-            fill="rgba(22, 24, 35, .34)"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
@@ -23,7 +23,7 @@ export const ClearIcon = ({ width = '16px', height = '16px', className }) => (
         width={width}
         height={height}
         viewBox="0 0 48 48"
-        fill="rgba(22, 24, 35, .34)"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path
