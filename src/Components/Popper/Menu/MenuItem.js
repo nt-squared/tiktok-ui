@@ -7,11 +7,11 @@ import { Button } from '~/Components/Button';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ data }) {
+function MenuItem({ data, onClick }) {
     return (
         <li className={cx('menu-item')}>
-            <Button className={cx('menu-content')} leftIcon={data.icon} to={data.to}>
-                {data.text}
+            <Button className={cx('menu-content')} leftIcon={data.icon} to={data.to} onClick={onClick}>
+                {data.title}
             </Button>
         </li>
     );

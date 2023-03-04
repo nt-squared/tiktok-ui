@@ -21,3 +21,35 @@
         justify-content: flex-start;
     }
 }
+
+// Menu Header
+.menu-header {
+    min-width: 223px;
+    height: 50px;
+    margin-top: -8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.back-button {
+    font-size: 0px;
+
+    & svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-left: 28px;
+    }
+}
+
+.header-content {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
