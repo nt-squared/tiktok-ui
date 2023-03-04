@@ -4,17 +4,6 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faEllipsisVertical,
-    faLanguage,
-    faMagnifyingGlass,
-    faPlus,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
-
-import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 
 // Source code
 import styles from './Header.module.scss';
@@ -23,13 +12,23 @@ import { PopperWrapper } from '~/Components/Popper';
 import { AccountItem } from '~/Components/AccountItem';
 import { Button } from '~/Components/Button';
 import { Menu } from '~/Components/Popper/Menu';
+import {
+    SearchIcon,
+    PlusIcon,
+    MoreButton,
+    LanguageIcon,
+    QuestionIcon,
+    KeyboardIcon,
+    SpinnerIcon,
+    ClearIcon,
+} from '~/Components/Icon';
 
 const inner = clsx('container', styles.inner);
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faLanguage} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'language',
@@ -48,12 +47,12 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <QuestionIcon />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboardIcon />,
         title: 'Keyboard shortcuts',
     },
 ];
@@ -91,7 +90,8 @@ function Header() {
                     <div className={cx('searchBar')}>
                         <Tippy
                             interactive
-                            visible={searchResult.length > 0}
+                            // visible={searchResult.length > 0}
+                            visible
                             render={(attrs) => (
                                 <div className={cx('searchResults')} tabIndex="-1" {...attrs}>
                                     <PopperWrapper>
@@ -112,14 +112,14 @@ function Header() {
                                     className={cx('searchInput')}
                                 />
                                 <button className={cx('clearIcon')}>
-                                    <FontAwesomeIcon icon={faCircleXmark} />
+                                    <ClearIcon style={{ margin: '0px 12px' }} />
                                 </button>
                                 {/* <button>
-                                    <FontAwesomeIcon icon={faSpinner} />
+                                    <SpinnerIcon style={{'margin: 0px 12px;'}}/>
                                 </button> */}
                                 <span></span>
                                 <button type="submit" className={cx('searchIcon')}>
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                    <SearchIcon />
                                 </button>
                             </div>
                         </Tippy>
@@ -127,13 +127,13 @@ function Header() {
                 </div>
 
                 <div className={cx('actionButtons')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                    <Button text leftIcon={<PlusIcon />}>
                         Upload
                     </Button>
                     <Button primary>Log in</Button>
                     <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-button')}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                            <MoreButton />
                         </button>
                     </Menu>
                 </div>

@@ -31,6 +31,17 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+
+    & ~ .menu-item {
+        padding: 10px 24px;
+        font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    }
+
+    & ~ .menu-item .menu-content {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 .back-button {
