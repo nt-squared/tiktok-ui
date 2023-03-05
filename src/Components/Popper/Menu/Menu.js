@@ -46,7 +46,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-wrapper')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-list')}>
+                    <PopperWrapper>
                         {menuSetting.length > 1 && (
                             <MenuHeader
                                 headerText="Language"
@@ -55,7 +55,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <ul className={cx('menu-list')}>{renderItems()}</ul>
                     </PopperWrapper>
                 </div>
             )}

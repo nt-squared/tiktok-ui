@@ -17,7 +17,7 @@ function Search() {
     // useState
     const [searchValue, setSearchValue] = useState('');
     const [searchResults, setSearchResults] = useState([]);
-    const [showResults, setshowResults] = useState(true);
+    const [showResults, setShowResults] = useState(true);
     const [seachLoading, setSeachLoading] = useState(false);
 
     // useDebounce
@@ -55,7 +55,7 @@ function Search() {
 
     // handle hide results
     const handleHideResults = () => {
-        setshowResults(false);
+        setShowResults(false);
     };
 
     // handle changed value
@@ -92,7 +92,7 @@ function Search() {
                         className={cx('searchInput')}
                         value={searchValue}
                         onChange={handleChangedValue}
-                        onFocus={() => setshowResults(true)}
+                        onFocus={() => setShowResults(true)}
                     />
                     {!!searchValue && !seachLoading && (
                         <button className={cx('clearIcon')} onClick={handleClearSearchValue}>

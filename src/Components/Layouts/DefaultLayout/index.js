@@ -5,7 +5,7 @@ import Header from '~/Components/Layouts/components/Header';
 import Sidebar from './Sidebar';
 
 function DefaultLayout({ children }) {
-    const inner = clsx('container', styles.inner);
+    const inner = clsx(styles.inner);
 
     return (
         <div className={styles.wrapper}>

@@ -12,7 +12,7 @@ import { Button } from '~/Components/Button';
 import { Menu } from '~/Components/Popper/Menu';
 import { PlusIcon, MoreButton, LanguageIcon, QuestionIcon, KeyboardIcon } from '~/Components/Icon';
 
-const inner = clsx('container', styles.inner);
+const inner = clsx(styles.inner);
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [

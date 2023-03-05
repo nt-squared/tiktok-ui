@@ -1,6 +1,11 @@
 .menu-wrapper {
     min-width: 223px;
 
+    & .menu-list {
+        max-height: 590px;
+        overflow-y: auto;
+    }
+
     & .menu-item {
         padding: 10px 8px 10px 16px;
         display: flex;
