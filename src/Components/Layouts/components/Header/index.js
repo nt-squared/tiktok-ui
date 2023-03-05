@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 import { Button } from '~/Components/Button';
 import { Menu } from '~/Components/Popper/Menu';
 import { PlusIcon, MoreButton, LanguageIcon, QuestionIcon, KeyboardIcon } from '~/Components/Icon';
@@ -60,7 +61,7 @@ function Header() {
             <div className={inner}>
                 {/* Logo */}
                 <div className={styles.logoContainer}>
-                    <Link to="/" className={cx('logo')}>
+                    <Link to={routesConfig.home} className={cx('logo')}>
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
                 </div>

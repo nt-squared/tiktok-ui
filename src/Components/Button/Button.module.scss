@@ -64,15 +64,15 @@
 // Button types
 
 .rounded {
-    --text-color: rgba(var(--primary-color) / 0.75);
-    --border-color: rgba(var(--primary-color) / 0.12);
+    --text-color: var(--primary-75);
+    --border-color: var(--primary-12);
     --border-width: 1px;
 
     border-radius: var(--min-width);
     box-shadow: 0px 2px 8px rgb(0 0 0 / 0.06);
 
     &:hover {
-        --border-color: rgba(var(--primary-color) / 0.2);
+        --border-color: var(--primary-20);
     }
 }
 
@@ -91,7 +91,7 @@
     --border-width: 1px;
 
     &:hover {
-        background: rgba(var(--primary-color) / 0.06);
+        background: var(--primary-06);
         --border-color: var(--text-color);
     }
 }
@@ -101,13 +101,13 @@
     --min-width: 110px;
     --padding-block: 0;
     --padding-inline: 16px;
-    --border-color: rgba(var(--primary-color) / 0.12);
+    --border-color: var(--primary-12);
     --border-width: 1px;
 
     border-radius: calc(var(--border-radius) / 2);
 
     &:hover {
-        background: rgba(var(--primary-color) / 0.03);
+        background: var(--primary-03);
     }
 }
 

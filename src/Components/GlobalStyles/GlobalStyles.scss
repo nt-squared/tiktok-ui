@@ -2,9 +2,21 @@
 
 :root {
     --primary-color: 22 24 35;
+    --primary-03: rgba(var(--primary-color) / 0.03);
+    --primary-06: rgba(var(--primary-color) / 0.06);
+    --primary-12: rgba(var(--primary-color) / 0.12);
+    --primary-20: rgba(var(--primary-color) / 0.2);
+    --primary-34: rgba(var(--primary-color) / 0.34);
+    --primary-50: rgba(var(--primary-color) / 0.5);
+    --primary-75: rgba(var(--primary-color) / 0.75);
+
     --accent-color: rgb(254, 44, 85);
     --black: #000;
     --white: #fff;
+
+    //fonts
+    --font-body: 'ProximaNova', sans-serif;
+    --font-text: 'SofiaPro';
 
     // Defaut Layout
     --default-layout-header-height: 60px;
@@ -20,7 +32,7 @@
 }
 
 body {
-    font-family: 'ProximaNova', sans-serif;
+    font-family: var(--font-body);
     font-size: 14px;
     line-height: 1.5;
     min-height: 100vh;

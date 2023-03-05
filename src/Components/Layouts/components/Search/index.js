@@ -58,52 +58,58 @@ function Search() {
         setshowResults(false);
     };
 
+    // handle changed value
+    const handleChangedValue = (e) => {
+        const inputValue = e.target.value;
+        if (!inputValue.startsWith(' ')) {
+            setSearchValue(inputValue);
+        }
+    };
+
     return (
         <div className={cx('searchWrapper')}>
-            <div className={cx('searchBar')}>
-                <HeadlessTippy
-                    interactive
-                    visible={showResults && searchResults.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('searchResults')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <div className={cx('searchAccount')}>Account</div>
-                                {searchResults.map((searchResult) => (
-                                    <AccountItem key={searchResult.id} data={searchResult} />
-                                ))}
-                            </PopperWrapper>
-                        </div>
-                    )}
-                    onClickOutside={handleHideResults}
-                >
-                    <div className={cx('searchContainer')}>
-                        <input
-                            ref={inputRef}
-                            type="search"
-                            spellCheck={false}
-                            placeholder="Search accounts and videos"
-                            className={cx('searchInput')}
-                            value={searchValue}
-                            onChange={(e) => setSearchValue(e.target.value)}
-                            onFocus={() => setshowResults(true)}
-                        />
-                        {!!searchValue && !seachLoading && (
-                            <button className={cx('clearIcon')} onClick={handleClearSearchValue}>
-                                <ClearIcon />
-                            </button>
-                        )}
-                        {seachLoading && (
-                            <button className={cx('spinnerIcon')}>
-                                <SpinnerIcon />
-                            </button>
-                        )}
-                        <span></span>
-                        <button type="submit" className={cx('searchIcon')}>
-                            <SearchIcon />
-                        </button>
+            <HeadlessTippy
+                interactive
+                visible={showResults && searchResults.length > 0}
+                render={(attrs) => (
+                    <div className={cx('searchResults')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            <div className={cx('searchAccount')}>Account</div>
+                            {searchResults.map((searchResult) => (
+                                <AccountItem key={searchResult.id} data={searchResult} />
+                            ))}
+                        </PopperWrapper>
                     </div>
-                </HeadlessTippy>
-            </div>
+                )}
+                onClickOutside={handleHideResults}
+            >
+                <div className={cx('searchContainer')}>
+                    <input
+                        ref={inputRef}
+                        type="search"
+                        spellCheck={false}
+                        placeholder="Search accounts and videos"
+                        className={cx('searchInput')}
+                        value={searchValue}
+                        onChange={handleChangedValue}
+                        onFocus={() => setshowResults(true)}
+                    />
+                    {!!searchValue && !seachLoading && (
+                        <button className={cx('clearIcon')} onClick={handleClearSearchValue}>
+                            <ClearIcon />
+                        </button>
+                    )}
+                    {seachLoading && (
+                        <button className={cx('spinnerIcon')}>
+                            <SpinnerIcon />
+                        </button>
+                    )}
+                    <span></span>
+                    <button type="submit" className={cx('searchIcon')}>
+                        <SearchIcon />
+                    </button>
+                </div>
+            </HeadlessTippy>
         </div>
     );
 }

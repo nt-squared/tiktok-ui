@@ -12,7 +12,7 @@ import { PopperWrapper } from '~/Components/Popper';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [menuSetting, setMenuSetting] = useState([{ data: items }]);
 
     const mainMenu = menuSetting[menuSetting.length - 1];
@@ -41,6 +41,8 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             interactive
             delay={[0, 500]}
+            offset={[13, 10]}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-wrapper')} tabIndex="-1" {...attrs}>

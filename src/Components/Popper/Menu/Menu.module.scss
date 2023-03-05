@@ -7,7 +7,7 @@
         justify-content: space-between;
 
         &:hover {
-            background: rgba(var(--primary-color) / 0.03);
+            background: var(--primary-03);
         }
     }
 
@@ -34,7 +34,7 @@
 
     & ~ .menu-item {
         padding: 10px 24px;
-        font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+        font-family: var(--font-text);
     }
 
     & ~ .menu-item .menu-content {

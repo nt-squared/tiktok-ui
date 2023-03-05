@@ -5,7 +5,7 @@
     align-items: center;
 
     &:hover {
-        background: rgba(var(--primary-color) / 0.03);
+        background: var(--primary-03);
     }
 }
 
@@ -52,7 +52,7 @@
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    color: rgba(var(--primary-color) / 0.5);
+    color: var(--primary-50);
     text-overflow: ellipsis;
     white-space: nowrap;
 }
