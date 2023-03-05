@@ -16,10 +16,10 @@ const defaultFn = () => {};
 function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [menuSetting, setMenuSetting] = useState([{ data: items }]);
 
-    const mainMenu = menuSetting[menuSetting.length - 1];
+    const currentMenu = menuSetting[menuSetting.length - 1];
 
-    const renderItems = () => {
-        return mainMenu.data.map((item, index) => {
+    const renderMenuItems = () => {
+        return currentMenu.data.map((item, index) => {
             const hasChildren = !!item.children;
 
             return (
@@ -38,6 +38,21 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         });
     };
 
+    const backToDirectParentMenu = () => setMenuSetting((prev) => prev.slice(0, prev.length - 1));
+
+    const renderMenuList = (attrs) => (
+        <div className={cx('menu-wrapper')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+                {menuSetting.length > 1 && (
+                    <MenuHeader headerText={currentMenu.title} onBack={backToDirectParentMenu} />
+                )}
+                <ul className={cx('menu-list')}>{renderMenuItems()}</ul>
+            </PopperWrapper>
+        </div>
+    );
+
+    const backToInitialMenu = () => setMenuSetting((prev) => prev.slice(0, 1));
+
     return (
         <Tippy
             interactive
@@ -45,22 +60,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             offset={[13, 10]}
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            render={(attrs) => (
-                <div className={cx('menu-wrapper')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        {menuSetting.length > 1 && (
-                            <MenuHeader
-                                headerText={mainMenu.title}
-                                onBack={() => {
-                                    setMenuSetting((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
-                        )}
-                        <ul className={cx('menu-list')}>{renderItems()}</ul>
-                    </PopperWrapper>
-                </div>
-            )}
-            onHide={() => setMenuSetting((prev) => prev.slice(0, 1))}
+            render={renderMenuList}
+            onHide={backToInitialMenu}
         >
             {children}
         </Tippy>
