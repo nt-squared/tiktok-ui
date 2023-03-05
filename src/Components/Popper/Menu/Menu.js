@@ -8,7 +8,7 @@ import Tippy from '@tippyjs/react/headless';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
 import MenuHeader from './MenuHeader';
-import { PopperWrapper } from '~/components/Popper';
+import PopperWrapper from '~/components/Popper';
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};

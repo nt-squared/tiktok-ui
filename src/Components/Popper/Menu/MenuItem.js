@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 // Source code
 import styles from './Menu.module.scss';
-import { Button } from '~/components/Button';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 

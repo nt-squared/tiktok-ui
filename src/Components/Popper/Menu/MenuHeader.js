@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 // Source code
 import styles from './Menu.module.scss';
-import { LeftArowIcon } from '~/components/Icon';
+import { LeftArowIcon } from '~/components/Icon/Icon';
 
 const cx = classNames.bind(styles);
 
