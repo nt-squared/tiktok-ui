@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 // Source code
 import styles from './Header.module.scss';
 import images from '~/assets/images';
+import config from '~/config';
 import Search from '../Search';
-import routesConfig from '~/config/routes';
-import { Button } from '~/Components/Button';
-import { Menu } from '~/Components/Popper/Menu';
-import { PlusIcon, MoreButton, LanguageIcon, QuestionIcon, KeyboardIcon } from '~/Components/Icon';
+import { Button } from '~/components/Button';
+import { Menu } from '~/components/Popper/Menu';
+import { PlusIcon, MoreButton, LanguageIcon, QuestionIcon, KeyboardIcon } from '~/components/Icon';
 
 const inner = clsx(styles.inner);
 const cx = classNames.bind(styles);
@@ -61,7 +61,7 @@ function Header() {
             <div className={inner}>
                 {/* Logo */}
                 <div className={styles.logoContainer}>
-                    <Link to={routesConfig.home} className={cx('logo')}>
+                    <Link to={config.routes.home} className={cx('logo')}>
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
                 </div>

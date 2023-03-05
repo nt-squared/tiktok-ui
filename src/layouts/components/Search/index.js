@@ -5,11 +5,11 @@ import { useEffect, useState, useRef } from 'react';
 
 // Source code
 import styles from './Search.module.scss';
-import * as searchService from '~/apiServices/searchService';
+import * as searchService from '~/services/searchService';
 import { useDebounce } from '~/hook';
-import { PopperWrapper } from '~/Components/Popper';
-import { AccountItem } from '~/Components/AccountItem';
-import { SearchIcon, SpinnerIcon, ClearIcon } from '~/Components/Icon';
+import { PopperWrapper } from '~/components/Popper';
+import { AccountItem } from '~/components/AccountItem';
+import { SearchIcon, SpinnerIcon, ClearIcon } from '~/components/Icon';
 
 const cx = classNames.bind(styles);
 
