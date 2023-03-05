@@ -1,4 +1,5 @@
 // Libraries
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 // Source code
@@ -17,5 +18,10 @@ function MenuHeader({ headerText, onBack }) {
         </div>
     );
 }
+
+MenuHeader.propTypes = {
+    headerText: PropTypes.string.isRequired,
+    onBack: PropTypes.func.isRequired,
+};
 
 export default MenuHeader;
