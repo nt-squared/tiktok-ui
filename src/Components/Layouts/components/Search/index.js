@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 
 // Source code
 import styles from './Search.module.scss';
+import * as searchService from '~/apiServices/searchService';
 import { useDebounce } from '~/hook';
 import { PopperWrapper } from '~/Components/Popper';
 import { AccountItem } from '~/Components/AccountItem';
@@ -32,17 +33,17 @@ function Search() {
             return;
         }
 
-        setSeachLoading(true);
+        const fetchApi = async () => {
+            setSeachLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResults(res.data);
-                setSeachLoading(false);
-            })
-            .finally(() => {
-                setSeachLoading(false);
-            });
+            const res = await searchService.search(debounced);
+
+            setSearchResults(res.data);
+
+            setSeachLoading(false);
+        };
+
+        fetchApi();
     }, [debounced]);
 
     // handle clear search value
