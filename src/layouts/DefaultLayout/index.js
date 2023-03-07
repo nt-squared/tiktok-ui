@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import styles from './DefaultLayout.module.scss';
 import Header from '~/layouts/components/Header/Header';
-import Sidebar from './Sidebar';
+import Sidebar from '~/layouts/components/Sidebar/Sidebar';
 
 function DefaultLayout({ children }) {
     const inner = clsx(styles.inner);

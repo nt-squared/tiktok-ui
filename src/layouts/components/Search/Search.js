@@ -9,7 +9,7 @@ import AccountItem from '~/components/AccountItem';
 import PopperWrapper from '~/components/Popper';
 import * as searchService from '~/services/searchService';
 import { useDebounce } from '~/hook';
-import { SearchIcon, SpinnerIcon, ClearIcon } from '~/components/Icon/Icon';
+import { SearchIcon, SpinnerIcon, ClearIcon } from '~/components/Icon';
 
 const cx = classNames.bind(styles);
 

@@ -1,0 +1,27 @@
+.frame-container {
+    position: relative;
+    padding: 20px 8px 24px 8px;
+    margin: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 8px auto;
+        height: 1px;
+        background-color: var(--primary-12);
+        transform: scaleY(0.5);
+    }
+}
+
+.frame-text {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--primary-50);
+}
+
+.frame-button {
+    width: 100%;
+    margin-block-start: 20px;
+    display: flex;
+    font-family: var(--font-text);
+}

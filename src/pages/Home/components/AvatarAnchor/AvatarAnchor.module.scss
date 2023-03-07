@@ -1,0 +1,19 @@
+.avatar-anchor {
+    display: flex;
+}
+
+.avatar-box {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(136 136 136 / 0.5);
+    border-radius: 50%;
+    border: 1px solid var(--primary-12);
+    cursor: pointer;
+}

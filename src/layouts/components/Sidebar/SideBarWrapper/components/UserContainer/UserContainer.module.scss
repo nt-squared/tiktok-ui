@@ -1,0 +1,149 @@
+.user-container {
+    padding-block: 16px;
+    color: var(--primary-75);
+    font-weight: var(--fw-600);
+    line-height: 20px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 8px auto;
+        height: 1px;
+        background-color: var(--primary-12);
+        transform: scaleY(0.5);
+    }
+}
+
+// Suggest Account
+.suggest-account-link {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color ease-in-out 200ms;
+
+    & > span {
+        width: 32px;
+        height: 32px;
+    }
+
+    & > div {
+        height: 32px;
+        flex: 1;
+    }
+
+    & h4 {
+        max-width: 260px;
+        margin-block-start: -2px;
+        font-weight: var(--fw-700);
+        font-family: var(--font-text);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    & p {
+        max-width: 260px;
+        font-size: 12px;
+        line-height: 15px;
+        color: var(--primary-75);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.suggest-title {
+    padding-inline: 8px;
+    margin-block-end: 8px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+// Profile Container
+.profile-container {
+    width: 320px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0 0 0 / 0.12);
+}
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 12px;
+
+    & img {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+
+.follow-button {
+    min-width: 106px;
+    padding-block: 6px;
+}
+
+.profile-username {
+    & span {
+        color: rgba(var(--primary-color) / 1);
+        font-weight: var(--fw-700);
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    & .checkIcon {
+        margin-inline-start: 4px;
+        color: #20d5ec;
+        vertical-align: baseline;
+    }
+}
+
+.profile-nickname {
+    color: rgba(var(--primary-color) / 1);
+    font-weight: var(--fw-600);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.profile-user-stat {
+    margin-block-start: 8px;
+
+    & :is(.user-follower, .user-like) {
+        font-weight: var(--fw-400);
+        display: inline-block;
+        margin-inline-end: 12px;
+        font-size: 17px;
+        line-height: 20px;
+        color: var(--primary-75);
+
+        &.count {
+            font-weight: var(--fw-700);
+            margin-inline-end: 6px;
+        }
+    }
+}
+
+// User Link Container
+.user-link-container {
+    --line-height: 48;
+    --max-line: 5;
+
+    // max-height: calc(var(--line-height) * 1px * var(--max-line));
+    overflow: hidden;
+}
+
+// See All Button
+.see-all-button {
+    border: none;
+    margin-block-start: 8px;
+    padding-inline: 8;
+
+    &:hover {
+        background-color: #0000;
+    }
+}

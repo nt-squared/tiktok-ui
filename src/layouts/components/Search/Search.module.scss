@@ -34,7 +34,7 @@
 .searchInput[type='search'] {
     width: 292px;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: var(--fw-400);
     line-height: 22px;
     background-color: #0000;
     color: rgba(var(--primary-color) / 1);

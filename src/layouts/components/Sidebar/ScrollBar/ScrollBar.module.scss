@@ -1,0 +1,19 @@
+.scroll-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-inline: 4px;
+    opacity: 0;
+    transform-origin: right top;
+    transition: opacity 0.5s;
+    height: 638.548px;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1) scale(1.42354) translateZ(-0.423542px)
+        translateZ(-2px);
+}
+
+.scroll-bar-thumb {
+    width: 6px;
+    height: 100%;
+    border-radius: 3px;
+    background-color: var(--primary-06);
+}

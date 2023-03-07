@@ -43,7 +43,7 @@
     }
 
     & ~ .menu-item .menu-content {
-        font-weight: 400;
+        font-weight: var(--fw-400);
         font-size: 14px;
         line-height: 20px;
     }
@@ -62,7 +62,7 @@
 
 .header-content {
     text-transform: capitalize;
-    font-weight: 600;
+    font-weight: var(--fw-600);
     font-size: 16px;
     line-height: 22px;
     position: absolute;

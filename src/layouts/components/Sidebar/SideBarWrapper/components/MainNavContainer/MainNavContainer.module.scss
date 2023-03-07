@@ -1,0 +1,32 @@
+.main-nav-container {
+    margin-block-end: 8px;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+    border-radius: 4px;
+    color: rgba(var(--primary-color) / 1);
+    font-size: 32px;
+    transition: background-color 200ms ease-in-out;
+
+    &.active {
+        color: var(--accent-color);
+    }
+
+    &:hover {
+        background-color: var(--primary-03);
+    }
+}
+
+.nav-item-text {
+    font-weight: var(--fw-700);
+    font-size: 18px;
+    line-height: 25px;
+    margin-inline-start: 8px;
+    text-transform: capitalize;
+}

@@ -1,0 +1,71 @@
+.text-info-container {
+    margin-inline-end: 114px;
+
+    & h4 {
+        font-weight: var(--fw-600);
+        font-size: 16px;
+        line-height: 22px;
+        margin-block: 4px 12px;
+
+        & .music-note-icon {
+            margin-inline-end: 5px;
+            transform: translateY(4px);
+        }
+    }
+}
+
+.author-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & .author-anchor {
+        display: block;
+        color: rgba(var(--primary-color) / 1);
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:hover .author-username {
+            text-decoration: underline;
+        }
+    }
+}
+
+.author-username {
+    display: inline-block;
+    font-family: var(--font-text);
+    font-size: 18px;
+    line-height: 25px;
+    margin-inline-end: 4px;
+}
+
+.author-nickname {
+    display: inline-block;
+    font-weight: var(--fw-400);
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.video-follow-button {
+    position: absolute;
+    inset: 28px 0 auto auto;
+}
+
+.author-hashtag {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    line-height: 22px;
+    word-break: break-word;
+
+    & .hashtag-text {
+        color: rgba(var(--primary-color) / 1);
+        display: inline-block;
+        margin-right: 4px;
+    }
+}

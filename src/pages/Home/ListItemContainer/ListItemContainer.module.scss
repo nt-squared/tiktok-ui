@@ -1,0 +1,13 @@
+.recommend-list-item-container {
+    display: flex;
+    align-items: flex-start;
+    padding-block: 20px;
+    position: relative;
+    max-width: 692px;
+}
+
+.content-container {
+    margin-inline-start: 12px;
+    width: 624px;
+    flex: 1 1 624px;
+}

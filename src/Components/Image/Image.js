@@ -9,7 +9,7 @@ import images from '~/assets/images';
 import styles from './Image.module.scss';
 
 const Image = forwardRef(
-    ({ src, alt, loading = 'lazy', fallbackImage: customFallbackImage = images.noImage, className, ...props }, ref) => {
+    ({ src, alt, loading, fallbackImage: customFallbackImage = images.noImage, className, ...props }, ref) => {
         const [fallbackImage, setFallbackImage] = useState('');
 
         const handleImageError = () => {

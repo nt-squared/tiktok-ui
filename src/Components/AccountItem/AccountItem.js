@@ -11,9 +11,11 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function AccountItem({ data }) {
+function AccountItem({ data, className }) {
+    const classes = cx('accountItem', { [className]: className });
+
     return (
-        <Link to={`/@${data.nickname}`} className={cx('accountItem')}>
+        <Link to={`/@${data.nickname}`} className={classes}>
             <span className={cx('avatar')}>
                 <Image
                     loading="lazy"

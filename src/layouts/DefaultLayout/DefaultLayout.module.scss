@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+    min-height: 100%;
 }
 
 .inner {
@@ -10,11 +11,7 @@
     width: 100%;
     max-width: var(--default-layout-width);
     display: flex;
-    // align-items: center;
+    align-items: center;
     justify-content: space-between;
     margin-block-start: 60px;
-}
-
-.content {
-    flex: 1;
 }

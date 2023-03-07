@@ -33,7 +33,7 @@
 .userName {
     font-size: 16px;
     line-height: 22px;
-    font-weight: 600;
+    font-weight: var(--fw-600);
     color: rgba(var(--primary-color) / 1);
     text-overflow: ellipsis;
 }
@@ -51,7 +51,7 @@
 .nickName {
     font-size: 14px;
     line-height: 20px;
-    font-weight: 400;
+    font-weight: var(--fw-400);
     color: var(--primary-50);
     text-overflow: ellipsis;
     white-space: nowrap;

@@ -1,0 +1,32 @@
+.footer-container {
+    position: relative;
+    padding-block-start: 16px;
+    padding-inline-start: 8px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0 8px auto;
+        height: 1px;
+        background: var(--primary-12);
+        transform: scaleY(0.5);
+    }
+}
+
+.footer-link-container {
+    margin-block-end: 8px;
+
+    & .footer-link-item,
+    .copyright {
+        color: var(--primary-50);
+        font-weight: var(--fw-600);
+        font-size: 12px;
+        line-height: 17px;
+        display: inline-block;
+        margin: 0 6px 5px 0;
+    }
+}
+
+.copyright {
+    margin-block: 5px 0;
+}
