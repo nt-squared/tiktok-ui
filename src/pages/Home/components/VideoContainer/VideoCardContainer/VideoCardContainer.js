@@ -1,10 +1,14 @@
 import classNames from 'classnames/bind';
+import { useContext } from 'react';
 
 import styles from './VideoCardContainer.module.scss';
+import { HomeContext } from '~/Context/HomeContext';
 
 const cx = classNames.bind(styles);
 
-function VideoCardContainer({ data }) {
+function VideoCardContainer() {
+    const userData = useContext(HomeContext);
+
     return (
         <div className={cx('video-wrapper')}>
             <div className={cx('video-card-container')}>
@@ -16,14 +20,14 @@ function VideoCardContainer({ data }) {
                                 autoPlay
                                 controls
                                 className=""
-                                // playsinline="true"
-                                // x5-playsinline="true"
-                                // webkit-playsinline="true"
+                                playsInline
+                                x5-playsinline="true"
+                                webkit-playsinline="true"
                                 tabIndex="2"
                                 mediatype="video"
                                 type="video/mp4"
                                 name="media"
-                                src="https://files.fullstack.edu.vn/f8-tiktok/videos/96-631020f76bee3.mp4"
+                                src={userData?.file_url}
                             ></video>
                         </div>
                     </div>

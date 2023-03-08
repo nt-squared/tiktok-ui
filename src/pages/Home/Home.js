@@ -8,9 +8,7 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('main-content-homepage')}>
-            <div>
-                <ListItemContainer />
-            </div>
+            <ListItemContainer />
         </div>
     );
 }

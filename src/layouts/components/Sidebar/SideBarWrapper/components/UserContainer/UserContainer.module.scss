@@ -23,6 +23,10 @@
     border-radius: 4px;
     transition: background-color ease-in-out 200ms;
 
+    &:hover {
+        text-decoration: none;
+    }
+
     & > span {
         width: 32px;
         height: 32px;

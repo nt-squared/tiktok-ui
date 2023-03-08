@@ -1,0 +1,35 @@
+.feed-share-group {
+    font-weight: var(--fw-600);
+    font-size: 16px;
+    line-height: 22px;
+    width: 280px;
+    padding-inline-end: 4px;
+    max-height: 448px;
+    overflow: auto;
+}
+
+.feed-share-link {
+    display: flex;
+    align-items: center;
+    padding: 11px 16px;
+    margin-inline: 4px 3px;
+    position: relative;
+
+    &:hover {
+        background-color: var(--primary-03);
+        text-decoration: none;
+    }
+}
+
+.feed-share-text {
+    margin-inline-start: 12px;
+}
+
+.share-arrow-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 16px;
+    margin-inline: 4px;
+    position: relative;
+}

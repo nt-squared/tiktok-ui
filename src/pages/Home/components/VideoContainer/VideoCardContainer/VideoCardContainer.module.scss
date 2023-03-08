@@ -20,6 +20,12 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+    .video-card-container {
+        height: calc(380px + ((100vw - 480px) / 288) * 20);
+    }
+}
+
 .canvas-card-holder {
     display: block;
     visibility: hidden;
@@ -46,6 +52,7 @@
     & .basic-player-wrapper {
         position: absolute;
         inset: 0;
+        background-color: var(--primary-06);
 
         & video {
             display: block;

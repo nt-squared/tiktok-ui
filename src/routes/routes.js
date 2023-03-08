@@ -11,11 +11,11 @@ import { HeaderLayout } from '~/layouts';
 // Public Routes
 const publicRoutes = [
     { path: config.routes.home, component: Home },
-    { path: config.routes.following, component: Following },
+    { path: config.routes.following, component: Home }, // component: Following
     { path: config.routes.profile, component: Profile },
     { path: config.routes.upload, component: Upload, layout: HeaderLayout },
     { path: config.routes.search, component: Search, layout: null },
-    { path: config.routes.live, component: Live },
+    { path: config.routes.live, component: Home }, // component: Live
 ];
 
 const privateRoutes = [];

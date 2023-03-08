@@ -1,32 +1,28 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
-import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function Button(
-    {
-        to,
-        href,
-        primary,
-        outline,
-        rounded,
-        text,
-        disabled,
-        small,
-        xsmall,
-        large,
-        children,
-        leftIcon,
-        rightIcon,
-        className,
-        onClick,
-        ...passedProps
-    },
-    ref,
-) {
+function Button({
+    to,
+    href,
+    primary,
+    outline,
+    rounded,
+    text,
+    disabled,
+    small,
+    xsmall,
+    large,
+    children,
+    leftIcon,
+    rightIcon,
+    className,
+    onClick,
+    ...passedProps
+}) {
     let Comp = 'button';
 
     const props = {
@@ -66,7 +62,7 @@ function Button(
     });
 
     return (
-        <Comp className={classes} {...props} ref={ref}>
+        <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('leftIcon')}>{leftIcon}</span>}
             <span className={cx('buttonText')}>{children}</span>
             {rightIcon && <span className={cx('rightIcon')}>{rightIcon}</span>}
@@ -92,6 +88,4 @@ Button.propTypes = {
     onClick: PropTypes.func,
 };
 
-const forwardedButton = forwardRef(Button);
-
-export default forwardedButton;
+export default Button;
