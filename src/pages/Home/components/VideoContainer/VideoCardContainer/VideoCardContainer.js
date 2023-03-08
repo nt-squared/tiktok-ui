@@ -27,7 +27,7 @@ function VideoCardContainer() {
                                 mediatype="video"
                                 type="video/mp4"
                                 name="media"
-                                src={userData?.file_url}
+                                src={userData.file_url}
                             ></video>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ function AvatarAnchor() {
                 <Image
                     alt="avatar"
                     loading="lazy"
-                    src={userData?.user?.avatar}
+                    src={userData.user.avatar}
                     fallbackImage="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                 />
             </span>

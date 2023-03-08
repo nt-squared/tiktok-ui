@@ -17,20 +17,20 @@ function ActionItemContainer() {
                 <span className={cx('icon-wrapper')}>
                     <HeartIcon />
                 </span>
-                <strong className={cx('strong-text')}>{userData?.likes_count}</strong>
+                <strong className={cx('strong-text')}>{userData.likes_count}</strong>
             </button>
             <button type="button" className={cx('button-action')}>
                 <span className={cx('icon-wrapper')}>
                     <EllipsisIcon />
                 </span>
-                <strong className={cx('strong-text')}>{userData?.comments_count}</strong>
+                <strong className={cx('strong-text')}>{userData.comments_count}</strong>
             </button>
             <ShareOption>
                 <button type="button" className={cx('button-action')}>
                     <span className={cx('icon-wrapper')}>
                         <ShareIcon />
                     </span>
-                    <strong className={cx('strong-text')}>{userData?.shares_count}</strong>
+                    <strong className={cx('strong-text')}>{userData.shares_count}</strong>
                 </button>
             </ShareOption>
         </div>

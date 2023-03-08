@@ -8,7 +8,7 @@ import { MusicNoteIcon } from '~/components/Icon';
 import { HomeContext } from '~/Context/HomeContext';
 const cx = classNames.bind(styles);
 
-function TextInfoContainer({ data }) {
+function TextInfoContainer() {
     const userData = useContext(HomeContext);
 
     return (
@@ -16,9 +16,9 @@ function TextInfoContainer({ data }) {
             <div className={cx('author-container')}>
                 <Link to={'/'} className={cx('author-anchor')}>
                     <h3 className={cx('author-username')}>
-                        {userData?.user?.first_name} {userData?.user?.last_name}
+                        {userData.user.first_name} {userData.user.last_name}
                     </h3>
-                    <h4 className={cx('author-nickname')}>{userData?.user?.nickname}</h4>
+                    <h4 className={cx('author-nickname')}>{userData.user.nickname}</h4>
                 </Link>
                 <Button outline xsmall className={cx('video-follow-button')}>
                     Follow

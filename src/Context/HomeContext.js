@@ -18,18 +18,48 @@ const fetchLink = [
 export const HomeProvider = ({ children }) => {
     const [userData, setUserData] = useState([]);
 
+    // useEffect(() => {
+    //     let userInfo = [];
+    //     const controller = new AbortController();
+    //     for (let i = 0; i < fetchLink.length; i++) {
+    //         let fetchData = fetch(fetchLink[i], { signal: controller.signal })
+    //             .then((res) => res.json())
+    //             .then((res) => res.data);
+    //         userInfo.push(fetchData);
+    //     }
+    //     // fetchLink.forEach((link) => {
+    //     //     let fetchData = fetch(link, { signal: controller.signal })
+    //     //         .then((res) => res.json())
+    //     //         .then((res) => res.data);
+    //     //     userInfo.push(fetchData);
+    //     // });
+
+    //     Promise.all(userInfo).then((data) => {
+    //         setUserData(data);
+    //     });
+    // }, [fetchData]);
+
     useEffect(() => {
         let userInfo = [];
-        fetchLink.forEach((link) => {
-            let fetchData = fetch(link)
+        const controller = new AbortController();
+        for (let i = 0; i < fetchLink.length; i++) {
+            let fetchData = fetch(fetchLink[i], { signal: controller.signal })
                 .then((res) => res.json())
                 .then((res) => res.data);
             userInfo.push(fetchData);
-        });
+        }
 
-        Promise.all(userInfo).then((data) => {
-            setUserData(data);
-        });
+        Promise.all(userInfo)
+            .then((data) => {
+                setUserData(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        return () => {
+            controller.abort();
+        };
     }, []);
 
     return (
