@@ -10,19 +10,19 @@ import {
 const navData = [
     {
         navText: 'home',
-        to: '/',
+        to: '/tiktok-ui',
         icon: <HomeIcon />,
         activeIcon: <ActiveHomeIcon />,
     },
     {
         navText: 'following',
-        to: '/following',
+        to: '/tiktok-ui/following',
         icon: <FollowingIcon />,
         activeIcon: <ActiveFollowingIcon />,
     },
     {
         navText: 'live',
-        to: '/live',
+        to: '/tiktok-ui/live',
         icon: <VideoIcon />,
         activeIcon: <ActiveVideoIcon />,
     },
