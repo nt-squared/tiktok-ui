@@ -3,7 +3,6 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
 
 import styles from './UserContainer.module.scss';
-import * as searchService from '~/services/searchService';
 import AccountItem from '~/components/AccountItem';
 import PopperWrapper from '~/components/Popper';
 import ProfileContainer from './ProfileContainer';
@@ -11,35 +10,20 @@ import ProfileContainer from './ProfileContainer';
 const cx = classNames.bind(styles);
 
 function UserLinkContainer({ className, seeMoreUser }) {
-    const stringArr = [];
-
-    for (let i = 48; i <= 57; i++) {
-        stringArr.push(i);
-    }
-
-    for (let i = 65; i <= 90; i++) {
-        stringArr.push(i, i + 32);
-    }
-    const stringArrLength = stringArr.length;
-    const randomValue = String.fromCodePoint(stringArr[Math.floor(Math.random() * stringArrLength)]);
-
     const [suggestAccounts, setSuggestAccounts] = useState([]);
 
     useEffect(() => {
-        const fetchApi = async () => {
-            const res = await searchService.search(randomValue, 'more');
-            const data = res.data;
-
-            setSuggestAccounts(data);
-            console.log('fetch');
-            return data;
-        };
-
-        fetchApi();
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=a&type=more`)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res.data);
+                setSuggestAccounts(res.data);
+            });
     }, []);
 
-    let showAccount;
-    seeMoreUser ? (showAccount = suggestAccounts) : (showAccount = suggestAccounts.slice(0, 5));
+    let showAccount = suggestAccounts;
+
+    !seeMoreUser && (showAccount = suggestAccounts.slice(0, 5));
 
     return (
         <>

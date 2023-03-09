@@ -17,14 +17,14 @@ function VideoCardContainer() {
                     <div className={cx('div-container')}>
                         <div className={cx('basic-player-wrapper')}>
                             <video
-                                autoPlay
+                                autoPlay={false}
                                 controls
                                 className=""
                                 playsInline
                                 x5-playsinline="true"
                                 webkit-playsinline="true"
-                                tabIndex="2"
-                                mediatype="video"
+                                tabIndex={2}
+                                mediatype={'video'}
                                 type="video/mp4"
                                 name="media"
                                 src={userData.file_url}
