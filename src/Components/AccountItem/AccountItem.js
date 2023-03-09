@@ -15,7 +15,7 @@ function AccountItem({ data, className }) {
     const classes = cx('accountItem', { [className]: className });
 
     return (
-        <Link to={`/@${data.nickname}`} className={classes}>
+        <Link to={`/tiktok-ui/`} className={classes}>
             <span className={cx('avatar')}>
                 <Image
                     loading="lazy"

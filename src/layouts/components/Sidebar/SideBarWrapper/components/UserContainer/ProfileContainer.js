@@ -13,7 +13,7 @@ function ProfileContainer({ data }) {
     return (
         <>
             <div className={cx('profile-header')}>
-                <Link to={`/@${data.nickname}`} className={cx('profile-header-link')}>
+                <Link to={`/tiktok-ui/`} className={cx('profile-header-link')}>
                     <span>
                         <Image
                             loading="lazy"
@@ -27,12 +27,12 @@ function ProfileContainer({ data }) {
                     Follow
                 </Button>
             </div>
-            <Link to={'/'} className={cx('profile-username')}>
+            <Link to={'/tiktok-ui/'} className={cx('profile-username')}>
                 <span>{data.full_name}</span>
                 {data.tick && <FontAwesomeIcon icon={faCircleCheck} className={cx('checkIcon')} />}
             </Link>
             <br />
-            <Link to={'/'} className={cx('profile-nickname')}>
+            <Link to={'/tiktok-ui/'} className={cx('profile-nickname')}>
                 <span>{data.nickname}</span>
             </Link>
             <p className={cx('profile-user-stat')}>

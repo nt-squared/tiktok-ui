@@ -105,6 +105,10 @@
         color: #20d5ec;
         vertical-align: baseline;
     }
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .profile-nickname {
@@ -112,6 +116,10 @@
     font-weight: var(--fw-600);
     font-size: 14px;
     line-height: 20px;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .profile-user-stat {
